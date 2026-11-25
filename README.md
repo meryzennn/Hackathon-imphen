@@ -75,6 +75,41 @@ Entri yang Ditolak tidak memegang link, jadi link yang sama bisa disubmit lagi.
 4. Catat di `entries.md`: link, bentuk catat, jam submit (WIB), status awal Menunggu penilaian.
 5. Update status di `entries.md` setelah panitia menilai (Valid / Duplikat / Ditolak + alasan).
 
+## Tool normalisasi (tools/normalize.py)
+
+Tool Python (tanpa dependensi tambahan) untuk mengecek link sebelum disubmit.
+Tiga hal yang dicek:
+
+1. **Bentuk catat** — link diubah ke bentuk yang dipakai panitia untuk cek duplikat:
+   skema, `www.`, huruf besar di nama domain, query, fragment, dan garis miring
+   di akhir dibuang; path tetap dihitung dan peka huruf besar-kecil.
+2. **Format entri** — http/https tanpa port, tanpa username/password, bukan IP/localhost,
+   maksimal 300 karakter.
+3. **Duplikat** — dibandingkan dengan entri yang sudah tercatat di `entries.md`
+   dan dengan link lain dalam satu daftar yang sama.
+
+Pemakaian:
+
+```bash
+# Cek bentuk catat dan format saja
+python3 tools/normalize.py https://www.contoh.xyz/
+
+# Cek sekalian duplikat terhadap entries.md
+python3 tools/normalize.py --check entries.md https://www.contoh.xyz/ https://contoh-lain.xyz/
+```
+
+Contoh output:
+
+```text
+https://www.contoh.xyz/
+  -> contoh.xyz  [OK]
+http://192.168.1.1/judi
+  -> 192.168.1.1/judi  [TIDAK SAH: tidak boleh alamat IP]
+```
+
+Status OK berarti format sah dan belum pernah disubmit tim.
+Kode keluar 0 kalau semua bersih, 1 kalau ada yang tidak sah atau duplikat.
+
 ## Isi repo
 
 - `README.md` — dokumen ini.
