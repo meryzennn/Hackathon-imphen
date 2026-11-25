@@ -8,9 +8,9 @@ Sumber aturan resmi: https://imphnen.dev/hackaton-anti-judol/info#aturan
 
 ## Tim
 
-- Nama tim: _(isi nama tim, 2 sampai 40 karakter, harus unik)_
-- Anggota: _(isi nama anggota, maksimal 4 orang)_
-- Kode tim: _(simpan kode tim di sini biar anggota lain bisa gabung)_
+- Nama tim: **jowoborot**
+- Anggota: meryzennn, deva
+- Kode tim: dibagikan lewat chat privat (repo ini publik, kode tidak ditulis di sini)
 
 ## Jadwal penting (WIB)
 
