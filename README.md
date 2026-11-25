@@ -10,7 +10,7 @@ Sumber aturan resmi: https://imphnen.dev/hackaton-anti-judol/info#aturan
 
 - Nama tim: **jowoborot**
 - Anggota: meryzennn, deva
-- Kode tim: dibagikan lewat chat privat (repo ini publik, kode tidak ditulis di sini)
+- Kode tim: [PREK5N](https://imphnen.dev/hackaton-anti-judol/daftar?kode=PREK5N)
 
 ## Jadwal penting (WIB)
 
